@@ -7,12 +7,14 @@ router = APIRouter()
 
 @router.post("/hospitals", response_model=HospitalResponse)
 def create_hospital(hospital: HospitalCreate, service: HospitalService = Depends(get_hospital_service)):
-    return service.create_hospital(hospital)
+    res = service.create_hospital(hospital)
+    return res
 
 
 @router.get("/hospitals", response_model=list[HospitalResponse])
 def list_hospitals(service: HospitalService = Depends(get_hospital_service)):
-    return service.list_hospitals()
+    res = service.list_hospitals()
+    return res
 
 
 @router.put("/hospitals/{hospital_id}", response_model=HospitalResponse)

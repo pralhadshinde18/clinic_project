@@ -1,5 +1,5 @@
-from fastapi import APIRouter, Depends, HTTPException
-from schema.patient_schema import PatientCreate, PatientResponse, PatientUpdate
+from fastapi import APIRouter, Depends
+from schema.patient_schema import PatientCreate, PatientResponse
 from service.patient_service import PatientService, get_patient_service
 
 router = APIRouter()

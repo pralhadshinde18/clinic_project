@@ -31,7 +31,5 @@ class HospitalUpdate(BaseModel):
 
 
 class HospitalResponse(HospitalBase):
-    id: str
+    pass
 
-    # class Config:
-    #     orm_mode = True

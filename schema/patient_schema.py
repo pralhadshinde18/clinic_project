@@ -50,5 +50,3 @@ class PatientUpdate(BaseModel):
 class PatientResponse(PatientBase):
     pass
 
-    # class Config:
-    #     orm_mode = True

@@ -43,7 +43,7 @@ class PatientModel(BaseModel):
     hospital_id: str
 
     class Config:
-        populate_by_name = True  # Updated from 'allow_population_by_field_name'
+        populate_by_name = True
         arbitrary_types_allowed = True
         json_encoders = {ObjectId: str}
 

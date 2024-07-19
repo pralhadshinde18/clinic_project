@@ -15,6 +15,7 @@ class HospitalDomain:
     address: str
     category: str
 
+    # Converts the domain model to a dictionary
     def to_dict(self):
         return {
             'id': self.id,
@@ -29,6 +30,7 @@ class HospitalDomain:
             'category': self.category
         }
 
+    # Creates a domain model from a dictionary
     @classmethod
     def from_dict(cls, data: dict):
         return cls(

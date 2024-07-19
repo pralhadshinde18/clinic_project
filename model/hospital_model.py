@@ -10,12 +10,14 @@ class PyObjectId(ObjectId):
     def __get_validators__(cls):
         yield cls.validate
 
+# This method validates if a value is a valid ObjectId.
     @classmethod
     def validate(cls, v, field=None, config=None):
         if not ObjectId.is_valid(v):
             raise ValueError("Invalid ObjectId")
         return ObjectId(v)
 
+# This method updates the JSON schema to represent the ObjectId as a string.
     @classmethod
     def __get_pydantic_json_schema__(cls, field_schema):
         field_schema.update(type="string")

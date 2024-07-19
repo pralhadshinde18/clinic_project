@@ -1,6 +1,5 @@
 from dataclasses import dataclass
 from typing import Optional
-from datetime import date
 
 
 @dataclass
@@ -24,6 +23,7 @@ class PatientDomain:
     exam_procedure: str
     hospital_id: str
 
+# Converts the domain model to a dictionary
     def to_dict(self):
         return {
             'id': self.id,
@@ -46,6 +46,7 @@ class PatientDomain:
             'hospital_id': self.hospital_id
         }
 
+# Creates a domain model from a dictionary
     @classmethod
     def from_dict(cls, data: dict):
         return cls(
