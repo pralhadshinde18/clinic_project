@@ -9,11 +9,11 @@ app = FastAPI()
 
 app.include_router(hospital_router, tags=["Hospital"])
 
-app.include_router(patient_router, tags=["patient"])
+app.include_router(patient_router, tags=["Patient"])
 
-app.include_router(reporting_doctor_router, tags=["reporting_doctor"])
+app.include_router(reporting_doctor_router, tags=["Reporting Doctor"])
 
-app.include_router(technician_router, tags=["technician"])
+app.include_router(technician_router, tags=["Technician"])
 
-app.include_router(hospital_details_router, tags=["Hospital details "])
+app.include_router(hospital_details_router, tags=["Hospital Details "])
 

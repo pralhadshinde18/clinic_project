@@ -2,13 +2,15 @@ from pymongo import MongoClient
 from bson import ObjectId
 from domain.hospital_domain import HospitalDomain
 from model.hospital_model import HospitalModel
+from database import get_hospital_collection
 
 
 class HospitalRepository:
     def __init__(self):
-        self.client = MongoClient("mongodb://localhost:27017")
-        self.db = self.client["hospital_db1"]
-        self.collection = self.db["hospitalss"]
+        self.collection = get_hospital_collection()
+        # self.client = MongoClient("mongodb://localhost:27017")
+        # self.db = self.client["hospital_db1"]
+        # self.collection = self.db["hospitalss"]
 
     def create(self, hospital: HospitalDomain) -> HospitalDomain:
         hospital_model = HospitalModel.from_domain(hospital)

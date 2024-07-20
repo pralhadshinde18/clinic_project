@@ -3,13 +3,12 @@ from bson import ObjectId
 from domain.patient_domain import PatientDomain
 from model.patient_model import PatientModel
 from typing import List
+from database import get_patient_collection
 
 
 class PatientRepository:
     def __init__(self):
-        self.client = MongoClient("mongodb://localhost:27017")
-        self.db = self.client["hospital_db1"]
-        self.collection = self.db["patients"]
+        self.collection = get_patient_collection()
 
     def create(self, patient: PatientDomain) -> PatientDomain:
         patient_model = PatientModel.from_domain(patient)
